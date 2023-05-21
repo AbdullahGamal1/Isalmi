@@ -123,7 +123,9 @@ class QuranTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Image.asset('assets/images/quoran_header_logo.png'),
+        Expanded(
+            flex: 1,
+            child: Image.asset('assets/images/quoran_header_logo.png')),
         Container(
           width: double.infinity,
           height: 1,
@@ -139,6 +141,7 @@ class QuranTab extends StatelessWidget {
           margin: EdgeInsets.symmetric(vertical: 4),
         ),
         Expanded(
+          flex: 3,
           //listView inside Expanded
           child: ListView.separated(
             itemBuilder: (context, index) {
