@@ -21,15 +21,17 @@ class _HadethTabState extends State<HadethTab> {
       Container(
         width: double.infinity,
         height: 1,
-        color: Theme.of(context).primaryColor,
+        color: Theme.of(context).canvasColor,
         margin: EdgeInsets.symmetric(vertical: 4),
       ),
-      Text('Hadeeth Number',
-          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
+      Text(
+        'Hadeeth Number',
+        style: Theme.of(context).textTheme.displayMedium,
+      ),
       Container(
         width: double.infinity,
         height: 1,
-        color: Theme.of(context).primaryColor,
+        color: Theme.of(context).canvasColor,
         margin: EdgeInsets.symmetric(vertical: 4),
       ),
       Expanded(
@@ -47,7 +49,7 @@ class _HadethTabState extends State<HadethTab> {
                       itemCount: allHadethList.length,
                       separatorBuilder: (context, index) {
                         return Container(
-                            color: Theme.of(context).primaryColor,
+                            color: Theme.of(context).canvasColor,
                             height: 1,
                             width: double.infinity,
                             margin: EdgeInsets.symmetric(horizontal: 64));

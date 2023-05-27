@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islami/Ui/home/quran/sura_name_widget.dart';
 
+import '../../my_theme_data.dart';
+
 class SuraDetailsScreen extends StatefulWidget {
   static const String routename = 'SuraDetailsScreen';
 
@@ -25,7 +27,9 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
     return Container(
       decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage('assets/images/background.png'),
+              image: AssetImage(MyThemeData.themeMode == ThemeMode.dark
+                  ? 'assets/images/dark_background.png'
+                  : 'assets/images/background.png'),
               fit: BoxFit.fill)),
       child: Scaffold(
         appBar: AppBar(title: Text(args.title)),
@@ -45,12 +49,13 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
                           return Text(
                             chapterContent[index],
                             textAlign: TextAlign.center,
+                            style: Theme.of(context).textTheme.displaySmall,
                           );
                         },
                         itemCount: chapterContent.length,
                         separatorBuilder: (context, index) {
                           return Container(
-                            color: Theme.of(context).primaryColor,
+                            color: Theme.of(context).canvasColor,
                             height: 1,
                             width: double.infinity,
                             margin: EdgeInsets.symmetric(horizontal: 64),

@@ -19,10 +19,7 @@ class SuraNameWidget extends StatelessWidget {
       child: Container(
         // to center sura names
         alignment: Alignment.center,
-        child: Text(title,
-            style: TextStyle(
-              fontSize: 24,
-            )),
+        child: Text(title, style: Theme.of(context).textTheme.displayMedium),
       ),
     );
   }
