@@ -15,12 +15,9 @@ class HadethtitleWidget extends StatelessWidget {
             arguments: Hadeth(hadeth.title, hadeth.content));
       },
       child: Container(
-        alignment: Alignment.center,
-        child: Text(hadeth.title,
-            style: TextStyle(
-              fontSize: 24,
-            )),
-      ),
+          alignment: Alignment.center,
+          child: Text(hadeth.title,
+              style: Theme.of(context).textTheme.displayMedium)),
     );
   }
 }

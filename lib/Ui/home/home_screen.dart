@@ -3,6 +3,7 @@ import 'package:islami/Ui/home/hadeth/hadeth.dart';
 import 'package:islami/Ui/home/quran/quran.dart';
 import 'package:islami/Ui/home/radio/radio.dart';
 import 'package:islami/Ui/home/tasbeh/tasbeh.dart';
+import 'package:islami/Ui/my_theme_data.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routeName = "HomeScreen";
@@ -19,7 +20,9 @@ class _HomeScreenState extends State<HomeScreen> {
     return Container(
       decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage('assets/images/background.png'),
+              image: AssetImage(MyThemeData.themeMode == ThemeMode.dark
+                  ? 'assets/images/dark_background.png'
+                  : 'assets/images/background.png'),
               fit: BoxFit.fill)),
       child: Scaffold(
         backgroundColor: Colors.transparent,
@@ -28,10 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
           elevation: 0,
           title: Center(
               child: Text('Islami',
-                  style: TextStyle(
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black))),
+                  style: Theme.of(context).textTheme.displayLarge)),
         ),
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: selectedTabndex,
@@ -39,8 +39,8 @@ class _HomeScreenState extends State<HomeScreen> {
             selectedTabndex = index;
             setState(() {});
           },
-          selectedItemColor: Colors.black,
-          unselectedItemColor: Colors.white,
+          // selectedItemColor: Colors.black,
+          // unselectedItemColor: Colors.white,
           items: [
             BottomNavigationBarItem(
                 backgroundColor: Theme.of(context).primaryColor,
