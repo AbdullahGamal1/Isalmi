@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami/Ui/home/hadeth/hadeth.dart';
 import 'package:islami/Ui/home/quran/quran.dart';
 import 'package:islami/Ui/home/radio/radio.dart';
 import 'package:islami/Ui/home/tasbeh/tasbeh.dart';
 import 'package:islami/Ui/my_theme_data.dart';
-
 class HomeScreen extends StatefulWidget {
   static const String routeName = "HomeScreen";
 
@@ -30,7 +30,7 @@ class _HomeScreenState extends State<HomeScreen> {
           backgroundColor: Colors.transparent,
           elevation: 0,
           title: Center(
-              child: Text('Islami',
+              child: Text(AppLocalizations.of(context)!.appTitle,
                   style: Theme.of(context).textTheme.displayLarge)),
         ),
         bottomNavigationBar: BottomNavigationBar(
@@ -45,19 +45,19 @@ class _HomeScreenState extends State<HomeScreen> {
             BottomNavigationBarItem(
                 backgroundColor: Theme.of(context).primaryColor,
                 icon: ImageIcon(AssetImage('assets/images/icon_radio.png')),
-                label: 'Radio'),
+                label: AppLocalizations.of(context)!.radio),
             BottomNavigationBarItem(
                 backgroundColor: Theme.of(context).primaryColor,
                 icon: ImageIcon(AssetImage('assets/images/icon_sebha.png')),
-                label: 'Tasbeeh'),
+                label: AppLocalizations.of(context)!.tasbeh),
             BottomNavigationBarItem(
                 backgroundColor: Theme.of(context).primaryColor,
                 icon: ImageIcon(AssetImage('assets/images/icon_hadeth.png')),
-                label: 'Hadeeth'),
+                label: AppLocalizations.of(context)!.hadeth),
             BottomNavigationBarItem(
                 backgroundColor: Theme.of(context).primaryColor,
                 icon: ImageIcon(AssetImage('assets/images/icon_quran.png')),
-                label: 'Quran'),
+                label: AppLocalizations.of(context)!.quran),
           ],
         ),
         body: Tabs[selectedTabndex],
