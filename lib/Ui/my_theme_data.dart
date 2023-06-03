@@ -23,16 +23,21 @@ class MyThemeData {
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
           selectedItemColor: Colors.black, unselectedItemColor: Colors.white),
       textTheme: TextTheme(
-          displayLarge: TextStyle(
-              color: lightMainTextColor,
-              fontSize: 32,
-              fontWeight: FontWeight.bold),
-          displayMedium: TextStyle(
-            fontSize: 24,
+        displayLarge: TextStyle(
             color: lightMainTextColor,
-          ),
-          displaySmall: TextStyle(fontSize: 20, color: lightMainTextColor)),
-      cardColor: lightPrimaryColor);
+            fontSize: 32,
+            fontWeight: FontWeight.bold),
+        displayMedium: TextStyle(
+          fontSize: 26,
+          color: lightMainTextColor,
+        ),
+        displaySmall: TextStyle(fontSize: 20, color: lightMainTextColor),
+        bodyMedium: TextStyle(
+          fontSize: 24,
+          color: lightMainTextColor,
+        ),
+      ),
+      cardColor: Colors.white);
 
   static var darkTheme = ThemeData(
       scaffoldBackgroundColor: Colors.transparent,
@@ -52,15 +57,27 @@ class MyThemeData {
           selectedItemColor: darkAccentCorol,
           unselectedItemColor: Colors.white),
       textTheme: TextTheme(
-          displayLarge: TextStyle(
-              color: darkMainTextColor,
-              fontSize: 32,
-              fontWeight: FontWeight.bold),
-          displayMedium: TextStyle(
-            fontSize: 24,
+        displayLarge: TextStyle(
             color: darkMainTextColor,
-          ),
-          displaySmall: TextStyle(fontSize: 20, color: darkMainTextColor)),
+            fontSize: 32,
+            fontWeight: FontWeight.bold),
+        displayMedium: TextStyle(
+          fontSize: 28,
+          color: darkMainTextColor,
+        ),
+        displaySmall: TextStyle(fontSize: 20, color: darkMainTextColor),
+        bodyMedium: TextStyle(
+          fontSize: 22,
+          color: darkMainTextColor,
+        ),
+      ),
+      bottomSheetTheme: BottomSheetThemeData(
+          backgroundColor: darkPrimaryColor,
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.only(
+            topRight: Radius.circular(12),
+            topLeft: Radius.circular(12),
+          ))),
       cardColor: darkPrimaryColor);
-  static ThemeMode themeMode = ThemeMode.dark;
+  ThemeMode themeMode = ThemeMode.light;
 }

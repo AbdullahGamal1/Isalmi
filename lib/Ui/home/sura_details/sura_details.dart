@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islami/Ui/home/quran/sura_name_widget.dart';
-
-import '../../my_theme_data.dart';
+import 'package:islami/provider/settings_provideer.dart';
+import 'package:provider/provider.dart';
 
 class SuraDetailsScreen extends StatefulWidget {
   static const String routename = 'SuraDetailsScreen';
@@ -17,7 +17,7 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
   @override
   Widget build(BuildContext context) {
     //Ask About that
-
+    var provider = Provider.of<SettingProvider>(context);
     var args =
         ModalRoute.of(context)?.settings.arguments as SuraDetailsArguments;
     // at the last line we use the casting (as) and that happend between parent and child
@@ -27,9 +27,7 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
     return Container(
       decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage(MyThemeData.themeMode == ThemeMode.dark
-                  ? 'assets/images/dark_background.png'
-                  : 'assets/images/background.png'),
+              image: AssetImage(provider.getBackGroundImage()),
               fit: BoxFit.fill)),
       child: Scaffold(
         appBar: AppBar(title: Text(args.title)),
